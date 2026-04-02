@@ -526,8 +526,24 @@ section { padding: 6rem 0; }
   font-weight: 600;
 }
 
+/* Download button inside left column */
+.resume-download {
+  margin-top: 2rem;
+}
+
 /* Skill bars */
 .skills-resume { display: flex; flex-direction: column; gap: 0.9rem; }
+.skill-scale-header { display: flex; align-items: center; gap: 1rem; margin-bottom: -0.2rem; }
+.skill-scale-labels {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
 .skill-row { display: flex; align-items: center; gap: 1rem; }
 .skill-name {
   font-size: 0.85rem;
