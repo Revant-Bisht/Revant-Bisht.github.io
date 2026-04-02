@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Revant Bisht</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">RB</a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html" class="nav-active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="page-section">
+    <div class="section-inner">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <!-- Arrhythmia Classifier -->
+        <div class="project-card featured">
+          <div class="project-header">
+            <span class="project-badge">Featured</span>
+            <div class="project-links">
+              <a href="https://arrhythmia-detection.vercel.app" target="_blank" rel="noopener" title="Live Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="https://github.com/Revant-Bisht/ArrythmiaClassifier" target="_blank" rel="noopener" title="Source Code">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Arrhythmia Classifier</h3>
+          <p class="project-desc">
+            End-to-end deep learning system for 12-lead ECG arrhythmia detection. InceptionTime + Attention architecture
+            trained on PhysioNet Challenge data, achieving 87% macro F1 across 27 rhythm classes.
+            Full-stack deployment with interactive demo and Grad-CAM visualizations.
+          </p>
+          <div class="project-tech">
+            <span>PyTorch</span><span>InceptionTime</span><span>FastAPI</span><span>Next.js</span><span>Docker</span>
+          </div>
+          <div class="project-stats">
+            <div class="stat"><span class="stat-val">87%</span><span class="stat-lbl">Macro F1</span></div>
+            <div class="stat"><span class="stat-val">27</span><span class="stat-lbl">Rhythm Classes</span></div>
+            <div class="stat"><span class="stat-val">12-lead</span><span class="stat-lbl">ECG Input</span></div>
+          </div>
+        </div>
+
+        <!-- Smart Grid -->
+        <div class="project-card coming-soon">
+          <div class="project-header">
+            <span class="project-badge soon-badge">Coming Soon</span>
+          </div>
+          <h3>Smart Grid Fault Detection</h3>
+          <p class="project-desc">
+            Real-time fault classification and anomaly detection for power distribution networks using
+            time-series ML on PMU data. Targeting sub-100ms detection latency for grid protection systems.
+          </p>
+          <div class="project-tech">
+            <span>PyTorch</span><span>Time-Series</span><span>Power Systems</span><span>PMU Data</span>
+          </div>
+          <div class="coming-soon-overlay"><span>In Development</span></div>
+        </div>
+
+        <!-- Fluid Mechanics Simulator -->
+        <div class="project-card coming-soon">
+          <div class="project-header">
+            <span class="project-badge soon-badge">Coming Soon</span>
+          </div>
+          <h3>Fluid Mechanics Simulator</h3>
+          <p class="project-desc">
+            Physics-informed neural network (PINN) for solving Navier-Stokes equations in complex geometries.
+            Combines differentiable simulation with learned corrections for turbulent flow regimes.
+          </p>
+          <div class="project-tech">
+            <span>PyTorch</span><span>PINNs</span><span>CFD</span><span>NumPy</span>
+          </div>
+          <div class="coming-soon-overlay"><span>In Development</span></div>
+        </div>
+
+        <!-- FPGA XGBoost -->
+        <div class="project-card coming-soon">
+          <div class="project-header">
+            <span class="project-badge soon-badge">Coming Soon</span>
+          </div>
+          <h3>FPGA-Accelerated XGBoost Inference</h3>
+          <p class="project-desc">
+            Hardware implementation of XGBoost tree traversal on Xilinx Zynq FPGA. Custom Verilog datapath
+            with HLS-generated accelerators, targeting &lt;1ms inference latency for edge deployment.
+          </p>
+          <div class="project-tech">
+            <span>Verilog</span><span>HLS</span><span>XGBoost</span><span>Xilinx Zynq</span>
+          </div>
+          <div class="coming-soon-overlay"><span>In Development</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Revant Bisht</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
