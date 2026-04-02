@@ -68,7 +68,7 @@ a:hover { color: var(--accent2); }
   white-space: nowrap;
   letter-spacing: 0;
 }
-.nav-logo:hover { color: var(--accent); }
+.nav-logo { cursor: default; }
 .nav-links {
   list-style: none;
   display: flex;
@@ -117,11 +117,11 @@ a:hover { color: var(--accent2); }
 }
 
 .hero-name {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
   background: linear-gradient(135deg, #e2e8f0 0%, #a0aec0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -131,8 +131,13 @@ a:hover { color: var(--accent2); }
 .hero-tag {
   font-size: 0.82rem;
   color: var(--text-muted);
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
   line-height: 1.4;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
 }
 
 .hero-photo {
