@@ -32,6 +32,50 @@
 
         <!-- Arrhythmia Classifier -->
         <div class="project-card featured">
+
+          <!-- ECG Animation Banner -->
+          <div class="ecg-banner">
+            <svg class="ecg-svg" viewBox="0 0 800 80" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <clipPath id="ecg-clip">
+                  <rect x="0" y="0" width="800" height="80"/>
+                </clipPath>
+                <linearGradient id="ecgFade" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#141720" stop-opacity="1"/>
+                  <stop offset="8%"   stop-color="#141720" stop-opacity="0"/>
+                  <stop offset="92%"  stop-color="#141720" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#141720" stop-opacity="1"/>
+                </linearGradient>
+              </defs>
+              <!-- subtle grid -->
+              <g opacity="0.12">
+                <line x1="0" y1="20" x2="800" y2="20" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="0" y1="40" x2="800" y2="40" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="0" y1="60" x2="800" y2="60" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="100" y1="0" x2="100" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="200" y1="0" x2="200" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="300" y1="0" x2="300" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="400" y1="0" x2="400" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="500" y1="0" x2="500" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="600" y1="0" x2="600" y2="80" stroke="#34d399" stroke-width="0.5"/>
+                <line x1="700" y1="0" x2="700" y2="80" stroke="#34d399" stroke-width="0.5"/>
+              </g>
+              <!-- scrolling ECG waveform: 3 normal beats → PVC → 2 normal beats, duplicated for seamless loop -->
+              <g clip-path="url(#ecg-clip)">
+                <g>
+                  <!-- instance 1 -->
+                  <path class="ecg-line" d="M0,55 L15,55 L20,49 L25,48 L30,55 L40,55 L43,58 L46,15 L49,60 L53,55 L70,45 L75,44 L85,55 L120,55 L135,55 L140,49 L145,48 L150,55 L160,55 L163,58 L166,15 L169,60 L173,55 L190,45 L195,44 L205,55 L240,55 L255,55 L260,49 L265,48 L270,55 L280,55 L283,58 L286,15 L289,60 L293,55 L310,45 L315,44 L325,55 L360,55 L375,55 L378,62 L384,12 L398,68 L408,55 L420,44 L430,64 L448,55 L520,55 L535,55 L540,49 L545,48 L550,55 L560,55 L563,58 L566,15 L569,60 L573,55 L590,45 L595,44 L605,55 L640,55 L655,55 L660,49 L665,48 L670,55 L680,55 L683,58 L686,15 L689,60 L693,55 L710,45 L715,44 L725,55 L800,55"/>
+                  <!-- instance 2 (offset 800px for seamless loop) -->
+                  <path class="ecg-line" transform="translate(800,0)" d="M0,55 L15,55 L20,49 L25,48 L30,55 L40,55 L43,58 L46,15 L49,60 L53,55 L70,45 L75,44 L85,55 L120,55 L135,55 L140,49 L145,48 L150,55 L160,55 L163,58 L166,15 L169,60 L173,55 L190,45 L195,44 L205,55 L240,55 L255,55 L260,49 L265,48 L270,55 L280,55 L283,58 L286,15 L289,60 L293,55 L310,45 L315,44 L325,55 L360,55 L375,55 L378,62 L384,12 L398,68 L408,55 L420,44 L430,64 L448,55 L520,55 L535,55 L540,49 L545,48 L550,55 L560,55 L563,58 L566,15 L569,60 L573,55 L590,45 L595,44 L605,55 L640,55 L655,55 L660,49 L665,48 L670,55 L680,55 L683,58 L686,15 L689,60 L693,55 L710,45 L715,44 L725,55 L800,55"/>
+                  <animateTransform attributeName="transform" type="translate" from="0,0" to="-800,0" dur="6s" repeatCount="indefinite"/>
+                </g>
+              </g>
+              <!-- fade edges -->
+              <rect x="0" y="0" width="800" height="80" fill="url(#ecgFade)" pointer-events="none"/>
+            </svg>
+            <span class="ecg-label">LEAD II &nbsp;·&nbsp; PTB-XL</span>
+          </div>
+
           <div class="project-header">
             <span class="project-badge">Featured</span>
             <div class="project-links">
@@ -45,16 +89,17 @@
           </div>
           <h3>Arrhythmia Classifier</h3>
           <p class="project-desc">
-            End-to-end deep learning system for 12-lead ECG arrhythmia detection. InceptionTime + Attention architecture
-            trained on PhysioNet Challenge data, achieving 87% macro F1 across 27 rhythm classes.
-            Full-stack deployment with interactive demo and Grad-CAM visualizations.
+            End-to-end deep learning system for 12-lead ECG classification on the PTB-XL database.
+            InceptionTime + Temporal Attention architecture for multi-label detection across 5
+            superdiagnostic classes (NORM, MI, STTC, CD, HYP). Temporal attention weights enable
+            Grad-CAM-style interpretability, highlighting clinically relevant ECG segments.
           </p>
           <div class="project-tech">
-            <span>PyTorch</span><span>InceptionTime</span><span>FastAPI</span><span>Next.js</span><span>Docker</span>
+            <span>PyTorch</span><span>InceptionTime</span><span>PTB-XL</span><span>FastAPI</span><span>Next.js</span><span>Docker</span>
           </div>
           <div class="project-stats">
-            <div class="stat"><span class="stat-val">87%</span><span class="stat-lbl">Macro F1</span></div>
-            <div class="stat"><span class="stat-val">27</span><span class="stat-lbl">Rhythm Classes</span></div>
+            <div class="stat"><span class="stat-val">AUC-ROC</span><span class="stat-lbl">Primary Metric</span></div>
+            <div class="stat"><span class="stat-val">5</span><span class="stat-lbl">Diagnostic Classes</span></div>
             <div class="stat"><span class="stat-val">12-lead</span><span class="stat-lbl">ECG Input</span></div>
           </div>
         </div>
