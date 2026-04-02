@@ -607,8 +607,9 @@ section { padding: 6rem 0; }
 .contact-inner .section-title::after { margin-left: auto; margin-right: auto; }
 
 .contact-cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -618,13 +619,13 @@ section { padding: 6rem 0; }
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.5rem 0.8rem;
+  padding: 1.5rem 1.2rem;
   background: var(--bg-card2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   color: var(--text-muted);
   transition: all 0.2s;
-  min-width: 0;
+  flex: 0 0 180px;
 }
 .contact-card svg { width: 28px; height: 28px; color: var(--accent); }
 .contact-card-label {
@@ -698,7 +699,6 @@ footer {
   .hero-right { width: 100%; }
   .projects-grid { grid-template-columns: 1fr; }
   .resume-layout { grid-template-columns: 1fr; }
-  .contact-cards { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -706,5 +706,4 @@ footer {
   .nav-links { display: none; }
   .section-inner { padding: 0 1.2rem; }
   .project-stats { gap: 1.2rem; }
-  .contact-cards { grid-template-columns: repeat(2, 1fr); }
 }
