@@ -587,10 +587,9 @@ section { padding: 6rem 0; }
 .contact-inner .section-title::after { margin-left: auto; margin-right: auto; }
 
 .contact-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -599,13 +598,13 @@ section { padding: 6rem 0; }
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1.8rem 2.5rem;
+  padding: 1.5rem 0.8rem;
   background: var(--bg-card2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   color: var(--text-muted);
   transition: all 0.2s;
-  min-width: 180px;
+  min-width: 0;
 }
 .contact-card svg { width: 28px; height: 28px; color: var(--accent); }
 .contact-card-label {
@@ -648,35 +647,16 @@ footer {
    ECG ANIMATION
    ============================================= */
 .ecg-banner {
-  position: relative;
   margin: -1.8rem -1.8rem 1.4rem;
-  background: rgba(0,0,0,0.35);
-  border-bottom: 1px solid rgba(52,211,153,0.15);
   overflow: hidden;
-  height: 80px;
+  height: 96px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom: 1px solid rgba(0,230,90,0.18);
 }
-.ecg-svg {
+.ecg-canvas {
   display: block;
   width: 100%;
-  height: 80px;
-}
-.ecg-line {
-  fill: none;
-  stroke: var(--green);
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 0 3px rgba(52,211,153,0.6));
-}
-.ecg-label {
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(52,211,153,0.4);
-  letter-spacing: 0.08em;
-  pointer-events: none;
+  height: 96px;
 }
 
 /* =============================================
@@ -698,6 +678,7 @@ footer {
   .hero-right { width: 100%; }
   .projects-grid { grid-template-columns: 1fr; }
   .resume-layout { grid-template-columns: 1fr; }
+  .contact-cards { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -705,5 +686,5 @@ footer {
   .nav-links { display: none; }
   .section-inner { padding: 0 1.2rem; }
   .project-stats { gap: 1.2rem; }
-  .contact-cards { flex-direction: column; align-items: stretch; }
+  .contact-cards { grid-template-columns: repeat(2, 1fr); }
 }
