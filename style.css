@@ -521,6 +521,10 @@ section { padding: 6rem 0; }
   color: var(--text-muted);
   line-height: 1.6;
 }
+.highlight-stat {
+  color: var(--accent);
+  font-weight: 600;
+}
 
 /* Skill bars */
 .skills-resume { display: flex; flex-direction: column; gap: 0.9rem; }
